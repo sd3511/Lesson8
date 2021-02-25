@@ -51,26 +51,33 @@ public class MyWindow extends JFrame {
 
         btnSend.addActionListener(new ActionListener() {
                                       public void actionPerformed(ActionEvent e) {
-                                          if (textArea.getText().equals(getTextInput())) {
+
+                                          if (textField.getText().equals("")){
+
+                                          }
+                                          else {if (textArea.getText().equals(getTextInput())) {
                                               textArea.setText("");
                                           }
                                           textArea.append("Вы: " + textField.getText() + "\n");
                                           textField.setText("");
                                           textArea.append("Ваш собеседник: " + getBuddyAnswers()[(int) (Math.random() * getBuddyAnswers().length)] + "\n");
-                                      }
+                                      }}
                                   }
         );
 
         textField.addKeyListener(new KeyListener() {
             public void keyTyped(KeyEvent e) {
                 if (e.getKeyChar() == KeyEvent.VK_ENTER) {
-                    if (textArea.getText().equals(getTextInput())) {
+                    if (textField.getText().equals("")){
+
+                    }
+                    else {if (textArea.getText().equals(getTextInput())) {
                         textArea.setText("");
                     }
                     textArea.append("Вы: " + textField.getText() + "\n");
                     textField.setText("");
                     textArea.append("Ваш собеседник: " + getBuddyAnswers()[(int) (Math.random() * getBuddyAnswers().length)] + "\n");
-                }
+                }}
             }
 
             public void keyPressed(KeyEvent e) {
